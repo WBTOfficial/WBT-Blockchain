@@ -22,6 +22,7 @@ Multiple consensus algorithms supported (VBFT/DBFT/RBFT/SBFT/PoW)
 Quick block generation time (1-30 seconds)
 
 About WBT Blockchain
+
 https://twitter.com/WBT_Official
 https://www.reddit.com/user/WorldBitcoinToken
 https://medium.com/@worldbitcointoken
