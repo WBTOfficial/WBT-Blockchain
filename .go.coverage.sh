@@ -1,7 +1,7 @@
 #!/bin/bash
 
 unset dirs files
-dirs=$(go list ./... | grep -v vendor/ | grep -v ontology$)
+dirs=$(go list ./... | grep -v vendor/ | grep -v WBT-Blockchain$)
 
 mkdir coverage
 tmpFile=./coverage/coverage.out.tmp
