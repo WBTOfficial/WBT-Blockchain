@@ -2,7 +2,7 @@ dist: bionic
 
 language: go
 
-go_import_path: github.com/ontio/ontology
+go_import_path: github.com/WBTOfficial/WBT-Blockchain
 
 os:
   - linux
@@ -20,7 +20,7 @@ deploy:
   token: "${GITHUB_TOKEN}"
   file_glob: true
   file: 
-    - ontology*
+    - WBT-Blockchain*
     - tool-*.zip
   skip_cleanup: true
   overwrite: true
