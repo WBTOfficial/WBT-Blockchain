@@ -24,6 +24,9 @@ Quick block generation time (1-30 seconds)
 About WBT Blockchain
 
 https://twitter.com/WBT_Official
+
 https://www.reddit.com/user/WorldBitcoinToken
+
 https://medium.com/@worldbitcointoken
+
 https://www.youtube.com/channel/UCGE9x3t5Na5oZHXvWMSh9IQ
