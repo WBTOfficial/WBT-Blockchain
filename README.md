@@ -5,7 +5,7 @@ Satoshi Nakamoto Bitcoin；Arthur Nakamoto World Bitcoin Token
 
 Welcome to the official Go implementation of the WBT Blockchain!
 
-WBT is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The Ontology MainNet was launched on June 30th, 2020.
+WBT is a high-performance public blockchain project and distributed trust collaboration platform. It is highly customizable and suitable for all kinds of business requirements. The WBT MainNet was launched on June 30th, 2020.
 
 As a public blockchain project, WBT is currently maintained by both the WBT core tech team and community members who can all support you in development. There are many available tools for use for development - SDKs, the SmartX IDE, WBT blockchain explorer and more.
 
