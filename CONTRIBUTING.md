@@ -29,8 +29,8 @@ As outlined in Keavy McMinn's article ["How to write the perfect pull request"](
 Issues
 ------
 
-Feel free to submit issues and enhancement requests [here](https://github.com/ontio/ontology/issues/new). Please consider [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and take the time to research your issue before asking for help.
+Feel free to submit issues and enhancement requests [here](https://github.com/ontio/WBT-Blockchain/issues/new). Please consider [how to ask a good question](https://stackoverflow.com/help/how-to-ask) and take the time to research your issue before asking for help.
 
 Duplicate questions will be closed.
 
-Any unrelated comments or questions can be asked in the [Ontology Discord](https://discordapp.com/invite/4TQujHj).
+Any unrelated comments or questions can be asked in the [WBT-Blockchain Discord](https://discordapp.com/invite/4TQujHj).
