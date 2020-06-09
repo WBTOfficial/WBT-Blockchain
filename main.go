@@ -1,19 +1,19 @@
 /*
- * Copyright (C) 2018 The ontology Authors
- * This file is part of The ontology library.
+ * Copyright (C) 2018 The WBT-Blockchain Authors
+ * This file is part of The WBT-Blockchain library.
  *
- * The ontology is free software: you can redistribute it and/or modify
+ * The WBT-Blockchain is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * The ontology is distributed in the hope that it will be useful,
+ * The WBT-Blockchain is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
- * along with The ontology.  If not, see <http://www.gnu.org/licenses/>.
+ * along with The WBT-Blockchain.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 package main
@@ -30,43 +30,43 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common/fdlimit"
-	"github.com/ontio/ontology-crypto/keypair"
-	alog "github.com/ontio/ontology-eventbus/log"
-	"github.com/ontio/ontology/account"
-	"github.com/ontio/ontology/cmd"
-	cmdcom "github.com/ontio/ontology/cmd/common"
-	"github.com/ontio/ontology/cmd/utils"
-	"github.com/ontio/ontology/common"
-	"github.com/ontio/ontology/common/config"
-	"github.com/ontio/ontology/common/log"
-	"github.com/ontio/ontology/consensus"
-	"github.com/ontio/ontology/core/genesis"
-	"github.com/ontio/ontology/core/ledger"
-	"github.com/ontio/ontology/events"
-	bactor "github.com/ontio/ontology/http/base/actor"
-	hserver "github.com/ontio/ontology/http/base/actor"
-	"github.com/ontio/ontology/http/jsonrpc"
-	"github.com/ontio/ontology/http/localrpc"
-	"github.com/ontio/ontology/http/nodeinfo"
-	"github.com/ontio/ontology/http/restful"
-	"github.com/ontio/ontology/http/websocket"
-	"github.com/ontio/ontology/p2pserver"
-	netreqactor "github.com/ontio/ontology/p2pserver/actor/req"
-	p2p "github.com/ontio/ontology/p2pserver/net/protocol"
-	"github.com/ontio/ontology/txnpool"
-	tc "github.com/ontio/ontology/txnpool/common"
-	"github.com/ontio/ontology/txnpool/proc"
-	"github.com/ontio/ontology/validator/stateful"
-	"github.com/ontio/ontology/validator/stateless"
+	"github.com/ontio/WBT-Blockchain-crypto/keypair"
+	alog "github.com/ontio/WBT-Blockchain-eventbus/log"
+	"github.com/ontio/WBT-Blockchain/account"
+	"github.com/ontio/WBT-Blockchain/cmd"
+	cmdcom "github.com/ontio/WBT-Blockchain/cmd/common"
+	"github.com/ontio/WBT-Blockchain/cmd/utils"
+	"github.com/ontio/WBT-Blockchain/common"
+	"github.com/ontio/WBT-Blockchain/common/config"
+	"github.com/ontio/WBT-Blockchain/common/log"
+	"github.com/ontio/WBT-Blockchain/consensus"
+	"github.com/ontio/WBT-Blockchain/core/genesis"
+	"github.com/ontio/WBT-Blockchain/core/ledger"
+	"github.com/ontio/WBT-Blockchain/events"
+	bactor "github.com/ontio/WBT-Blockchain/http/base/actor"
+	hserver "github.com/ontio/WBT-Blockchain/http/base/actor"
+	"github.com/ontio/WBT-Blockchain/http/jsonrpc"
+	"github.com/ontio/WBT-Blockchain/http/localrpc"
+	"github.com/ontio/WBT-Blockchain/http/nodeinfo"
+	"github.com/ontio/WBT-Blockchain/http/restful"
+	"github.com/ontio/WBT-Blockchain/http/websocket"
+	"github.com/ontio/WBT-Blockchain/p2pserver"
+	netreqactor "github.com/ontio/WBT-Blockchain/p2pserver/actor/req"
+	p2p "github.com/ontio/WBT-Blockchain/p2pserver/net/protocol"
+	"github.com/ontio/WBT-Blockchain/txnpool"
+	tc "github.com/ontio/WBT-Blockchain/txnpool/common"
+	"github.com/ontio/WBT-Blockchain/txnpool/proc"
+	"github.com/ontio/WBT-Blockchain/validator/stateful"
+	"github.com/ontio/WBT-Blockchain/validator/stateless"
 	"github.com/urfave/cli"
 )
 
 func setupAPP() *cli.App {
 	app := cli.NewApp()
-	app.Usage = "Ontology CLI"
-	app.Action = startOntology
+	app.Usage = "WBT-Blockchain CLI"
+	app.Action = start WBT-Blockchain
 	app.Version = config.Version
-	app.Copyright = "Copyright in 2018 The Ontology Authors"
+	app.Copyright = "Copyright in 2018 The WBT-Blockchain Authors"
 	app.Commands = []cli.Command{
 		cmd.AccountCommand,
 		cmd.InfoCommand,
@@ -451,7 +451,7 @@ func waitToExit(db *ledger.Ledger) {
 	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, syscall.SIGHUP)
 	go func() {
 		for sig := range sc {
-			log.Infof("Ontology received exit signal: %v.", sig.String())
+			log.Infof("WBT-Blockchain received exit signal: %v.", sig.String())
 			log.Infof("closing ledger...")
 			db.Close()
 			close(exit)
