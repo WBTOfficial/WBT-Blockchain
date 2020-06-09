@@ -18,12 +18,12 @@ GoOnchain.iml
 *.tlog
 vendor/*
 .vs/
-!vendor/github.com/ontio/ontology-crypto/*
+!vendor/github.com/ontio/WBT-crypto/*
 Chain/*
 Chain
 /config/*
 nodectl
-ontology
+WBT-Blockchain
 wallet.dat
 cscope*
 *.exe
