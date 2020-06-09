@@ -1,4 +1,4 @@
-module github.com/ontio/ontology
+module github.com/ontio/WBT-Blockchain
 
 go 1.12
 
@@ -16,8 +16,8 @@ require (
 	github.com/howeyc/gopass v0.0.0-20190910152052-7cb4b85ec19c
 	github.com/itchyny/base58-go v0.1.0
 	github.com/mattn/go-isatty v0.0.10 // indirect
-	github.com/ontio/ontology-crypto v1.0.9
-	github.com/ontio/ontology-eventbus v0.9.1
+	github.com/ontio/WBT-Blockchain-crypto v1.0.9
+	github.com/ontio/WBT-Blockchain-eventbus v0.9.1
 	github.com/ontio/wagon v0.4.1
 	github.com/orcaman/concurrent-map v0.0.0-20190826125027-8c72a8bb44f6 // indirect
 	github.com/pborman/uuid v1.2.0
