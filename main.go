@@ -142,10 +142,10 @@ func main() {
 	}
 }
 
-func startOntology(ctx *cli.Context) {
+func startWBT-Blockchain(ctx *cli.Context) {
 	initLog(ctx)
 
-	log.Infof("ontology version %s", config.Version)
+	log.Infof("WBT-Blockchain version %s", config.Version)
 
 	setMaxOpenFiles()
 
@@ -213,9 +213,9 @@ func initLog(ctx *cli.Context) {
 	}
 }
 
-func initConfig(ctx *cli.Context) (*config.OntologyConfig, error) {
-	//init ontology config from cli
-	cfg, err := cmd.SetOntologyConfig(ctx)
+func initConfig(ctx *cli.Context) (*config.WBT-BlockchainConfig, error) {
+	//init WBT-Blockchain config from cli
+	cfg, err := cmd.SetWBT-BlockchainConfig(ctx)
 	if err != nil {
 		return nil, err
 	}
