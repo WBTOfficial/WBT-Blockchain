@@ -1,7 +1,7 @@
 GOFMT=gofmt
 GC=go build
 VERSION := $(shell git describe --always --tags --long)
-BUILD_NODE_PAR = -ldflags "-w -X github.com/ontio/ontology/common/config.Version=$(VERSION)" #-race
+BUILD_NODE_PAR = -ldflags "-w -X github.com/ontio/WBT-Blockchain/common/config.Version=$(VERSION)" #-race
 
 ARCH=$(shell uname -m)
 DBUILD=docker build
@@ -14,8 +14,8 @@ TOOLS=./tools
 ABI=$(TOOLS)/abi
 NATIVE_ABI_SCRIPT=./cmd/abi/native_abi_script
 
-ontology: $(SRC_FILES)
-	CGO_ENABLED=1 $(GC)  $(BUILD_NODE_PAR) -o ontology main.go
+WBT-Blockchain: $(SRC_FILES)
+	CGO_ENABLED=1 $(GC)  $(BUILD_NODE_PAR) -o WBT-Blockchain main.go
  
 sigsvr: $(SRC_FILES) abi 
 	$(GC)  $(BUILD_NODE_PAR) -o sigsvr cmd-tools/sigsvr/sigsvr.go
@@ -28,17 +28,17 @@ abi:
 
 tools: sigsvr abi
 
-all: ontology tools
+all: WBT-Blockchain tools
 
-ontology-cross: ontology-windows ontology-linux ontology-darwin
+WBT-Blockchain-cross: WBT-Blockchain-windows WBT-Blockchain-linux ontology-darwin
 
-ontology-windows:
-	GOOS=windows GOARCH=amd64 $(GC) $(BUILD_NODE_PAR) -o ontology-windows-amd64.exe main.go
+WBT-Blockchain-windows:
+	GOOS=windows GOARCH=amd64 $(GC) $(BUILD_NODE_PAR) -o WBT-Blockchain-windows-amd64.exe main.go
 
-ontology-linux:
+WBT-Blockchain-linux:
 	GOOS=linux GOARCH=amd64 $(GC) $(BUILD_NODE_PAR) -o ontology-linux-amd64 main.go
 
-ontology-darwin:
+WBT-Blockchain-darwin:
 	GOOS=darwin GOARCH=amd64 $(GC) $(BUILD_NODE_PAR) -o ontology-darwin-amd64 main.go
 
 tools-cross: tools-windows tools-linux tools-darwin
@@ -64,31 +64,31 @@ format:
 	$(GOFMT) -w main.go
 
 docker/payload: docker/build/bin/ontology docker/Dockerfile
-	@echo "Building ontology payload"
+	@echo "Building WBT-Blockchain payload"
 	@mkdir -p $@
 	@cp docker/Dockerfile $@
-	@cp docker/build/bin/ontology $@
+	@cp docker/build/bin/WBT-Blockchain $@
 	@touch $@
 
 docker/build/bin/%: Makefile
-	@echo "Building ontology in docker"
+	@echo "Building WBT-Blockchain in docker"
 	@mkdir -p docker/build/bin docker/build/pkg
 	@$(DRUN) --rm \
 		-v $(abspath docker/build/bin):/go/bin \
 		-v $(abspath docker/build/pkg):/go/pkg \
 		-v $(GOPATH)/src:/go/src \
-		-w /go/src/github.com/ontio/ontology \
+		-w /go/src/github.com/ontio/WBT-Blockchain \
 		golang:1.9.5-stretch \
-		$(GC)  $(BUILD_NODE_PAR) -o docker/build/bin/ontology main.go
+		$(GC)  $(BUILD_NODE_PAR) -o docker/build/bin/WBT-Blockchain main.go
 	@touch $@
 
 docker: Makefile docker/payload docker/Dockerfile 
-	@echo "Building ontology docker"
+	@echo "Building WBT-Blockchain docker"
 	@$(DBUILD) -t $(DOCKER_NS)/ontology docker/payload
 	@docker tag $(DOCKER_NS)/ontology $(DOCKER_NS)/ontology:$(DOCKER_TAG)
 	@touch $@
 
 clean:
 	rm -rf *.8 *.o *.out *.6 *exe coverage
-	rm -rf ontology ontology-* tools docker/payload docker/build
+	rm -rf WBT-Blockchain-* tools docker/payload docker/build
 
